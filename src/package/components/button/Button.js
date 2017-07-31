@@ -1,8 +1,8 @@
 import React from 'react'
 
 const preventDefault = (callback) => (e) => {
-  e.preventDefault();
-  callback(e);
+  e.preventDefault()
+  callback && callback(e)
 }
 
 export default ({ children, id, onClick, className, style }) => (
