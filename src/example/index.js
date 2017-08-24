@@ -1,14 +1,21 @@
 import React from 'react'
-import { Router } from 'react-router'
-import createBrowserHistory from 'history/createBrowserHistory'
-
+import { BrowserRouter, Match } from 'react-router'
 import Home from './pages/Home'
+
 import './index.css'
 
-const history = createBrowserHistory()
+const title = 'Reboo SlateJS Editor'
 
-export default () => (
-  <Router history={history}>
-    <Home title='Nossas - SlateJS Editor' />
-  </Router>
-)
+const Example = () => {
+  return (
+    <BrowserRouter>
+      <div className="App">
+        {/* Begin Routes */}
+        <Match exactly pattern="/" render={() => <Home title={title} />} />
+        {/* End Routes */}
+      </div>
+    </BrowserRouter>
+  )
+}
+
+export default Example
